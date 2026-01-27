@@ -1,0 +1,47 @@
+.confetti-piece {
+  position: absolute;
+  top: -10vh; /* start slightly above the viewport */
+  border-radius: 999px;
+  opacity: 0.9;
+  animation-name: confetti-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  will-change: transform, opacity;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+  }
+  50% {
+    transform: translate3d(20px, 50vh, 0) rotateZ(180deg);
+  }
+  100% {
+    transform: translate3d(-10px, 105vh, 0) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+/* Toast animation – fade in, stay, then fade out */
+@keyframes toastFade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.animate-toast {
+  animation: toastFade 5s ease-in-out forwards;
+}

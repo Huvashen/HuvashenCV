@@ -1,0 +1,100 @@
+<nav class="bg-black/95 backdrop-blur shadow-md fixed top-0 inset-x-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 lg:px-6">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+
+      <!-- Left Logo / Name -->
+      <a 
+        href="#home-section"
+        (click)="closeMenu()"
+        class="flex items-center space-x-3 text-white"
+      >
+        <span class="h-9 w-9 flex items-center justify-center rounded-full bg-white text-black font-bold">
+          HG
+        </span>
+
+        <span class="text-lg font-semibold tracking-wide">
+          Huvashen Gramani
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a
+          href="#about-section"
+          class="text-gray-200 hover:text-cyan-300 transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-cyan-300"
+        >
+          ABOUT
+        </a>
+        <a
+          href="#experience-section"
+          class="text-gray-200 hover:text-cyan-300 transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-cyan-300"
+        >
+          EXPERIENCE
+        </a>
+        <a
+          href="#projects-section"
+          class="text-gray-200 hover:text-cyan-300 transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-cyan-300"
+        >
+          PROJECTS
+        </a>
+        <a
+          href="#contact-section"
+          class="text-gray-200 hover:text-cyan-300 transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-cyan-300"
+        >
+          CONTACT
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button
+        class="md:hidden text-gray-300 hover:text-white"
+        (click)="toggleMenu()"
+      >
+        <svg *ngIf="!isMenuOpen" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+
+        <svg *ngIf="isMenuOpen" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-black/95 border-t border-gray-700">
+    <div class="px-4 py-4 space-y-2 font-medium text-gray-200">
+      <a
+        href="#about-section"
+        (click)="closeMenu()"
+        class="block py-1 text-gray-200 hover:text-cyan-300 transition-colors duration-200 border-b-2 border-transparent hover:border-cyan-300"
+      >
+        ABOUT
+      </a>
+      <a
+        href="#experience-section"
+        (click)="closeMenu()"
+        class="block py-1 text-gray-200 hover:text-cyan-300 transition-colors duration-200 border-b-2 border-transparent hover:border-cyan-300"
+      >
+        EXPERIENCE
+      </a>
+      <a
+        href="#projects-section"
+        (click)="closeMenu()"
+        class="block py-1 text-gray-200 hover:text-cyan-300 transition-colors duration-200 border-b-2 border-transparent hover:border-cyan-300"
+      >
+        PROJECTS
+      </a>
+      <a
+        href="#contact-section"
+        (click)="closeMenu()"
+        class="block py-1 text-gray-200 hover:text-cyan-300 transition-colors duration-200 border-b-2 border-transparent hover:border-cyan-300"
+      >
+        CONTACT
+      </a>
+    </div>
+  </div>
+</nav>
