@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "deploy": "ng build --configuration production --base-href /HuvashenCV/ && npx angular-cli-ghpages --dir=dist/HuvashenCV/browser",  
     "test": "ng test",
     "serve:ssr:HuvashenCV": "node dist/HuvashenCV/server/server.mjs"
   },
