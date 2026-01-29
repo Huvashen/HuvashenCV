@@ -57,3 +57,10 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## to redeploy changes to gh-pages branch
+
+ng build --configuration production --base-href "/HuvashenCV/"
+npx angular-cli-ghpages --dir=dist/HuvashenCV/browser
+
+make changes onto maste and run thuis command for updates
