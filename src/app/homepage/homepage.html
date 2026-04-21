@@ -1,893 +1,748 @@
+<section id="home-section" class="hero-section">
+  <div class="hero-grid"></div>
+  <div class="hero-glow hero-glow--one"></div>
+  <div class="hero-glow hero-glow--two"></div>
 
-<section
-  id="home-section"
-  class="min-h-[calc(100vh-4rem)] bg-white flex items-center justify-center px-4 lg:px-0"
->
-  <div
-    class="max-w-5xl w-full grid md:grid-cols-[280px,minmax(0,1fr)] gap-10 md:gap-16 items-center"
-  >
-    <!-- Profile image -->
-    <div class="flex justify-center md:justify-start">
-      <div
-        class="h-56 w-56 md:h-64 md:w-64 rounded-full overflow-hidden border-[10px] border-gray-100 shadow-lg"
-      >
+  <div class="mx-auto max-w-6xl px-4 pb-20 pt-32 sm:px-6 md:pt-36 lg:px-8 lg:pb-24">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
+      <div class="space-y-8" data-reveal>
+        <div class="eyebrow-chip">Junior Full-Stack Software Developer</div>
+
+        <div class="space-y-5">
+          <p class="hero-kicker">Junior Software Developer</p>
+
+          <h1 class="hero-title font-heading">
+            Hi there, I'm Huvashen Gramani.
+          </h1>
+
+          <p class="hero-copy">
+            I build responsive web interfaces and practical full-stack features across front-end, back-end,
+            APIs, and integrations. My focus is on turning requirements into polished screens, structured code,
+            and business-facing software that feels clear, dependable, and easy to use.
+          </p>
+        </div>
+
+        <div class="hero-actions flex flex-wrap gap-3">
+          <button type="button" class="primary-button hero-action" (click)="downloadCv()">
+            Download CV
+          </button>
+          <button type="button" class="secondary-button hero-action" (click)="goToContact()">
+            Contact me
+          </button>
+          <a
+            [href]="linkedinUrl"
+            target="_blank"
+            rel="noreferrer"
+            class="ghost-button hero-action"
+          >
+            <svg
+              class="hero-action__icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                fill="currentColor"
+                d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19ZM8.05 10.56H5.57V18.5H8.05V10.56ZM6.81 6.6A1.44 1.44 0 1 0 6.84 9.48A1.44 1.44 0 1 0 6.81 6.6ZM18.43 13.67C18.43 11.27 17.14 10.15 15.43 10.15C14.05 10.15 13.43 10.91 13.08 11.45V10.56H10.61C10.64 11.15 10.61 18.5 10.61 18.5H13.08V14.06C13.08 13.82 13.1 13.59 13.17 13.42C13.36 12.95 13.79 12.46 14.52 12.46C15.48 12.46 15.86 13.19 15.86 14.26V18.5H18.33V13.97C18.33 13.87 18.33 13.77 18.43 13.67Z"
+              />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="hero-metrics-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <article *ngFor="let metric of heroMetrics" class="metric-card">
+            <p class="metric-card__value font-heading">{{ metric.value }}</p>
+            <p class="metric-card__label">{{ metric.label }}</p>
+            <p class="metric-card__detail">{{ metric.detail }}</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="relative" data-reveal>
+        <div class="profile-showcase">
+          <div class="profile-orbit"></div>
+
+          <article class="profile-card">
+            <div class="profile-card__media">
+              <img
+                src="assets/images/huvashenPortfolioPic.jpg"
+                alt="Portrait of Huvashen Gramani"
+                class="profile-card__image"
+                loading="eager"
+              />
+            </div>
+
+            <div class="profile-card__body">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <p class="card-eyebrow">Development focus</p>
+                  <h2 class="text-2xl font-semibold text-[var(--ink-deep)]">
+                    Building polished full-stack web experiences
+                  </h2>
+                </div>
+
+                <span class="status-pill">Open to junior full-stack roles</span>
+              </div>
+
+              <p class="profile-card__copy">
+                I care about software that looks intentional on the front end and remains reliable underneath
+                through thoughtful back-end structure.
+              </p>
+
+              <div class="grid gap-3 sm:grid-cols-2">
+                <div class="mini-panel">
+                  <p class="card-eyebrow">Core strength</p>
+                  <p class="mini-panel__value">Interface polish</p>
+                  <p class="mini-panel__copy">Layout, hierarchy, interaction, and responsive detail.</p>
+                </div>
+
+                <div class="mini-panel">
+                  <p class="card-eyebrow">Full-stack scope</p>
+                  <p class="mini-panel__value">Product-minded delivery</p>
+                  <p class="mini-panel__copy">Business sites, internal tools, APIs, and integration-heavy screens.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <div class="floating-note floating-note--top">
+            Huvashen Gramani
+          </div>
+          <div class="floating-note floating-note--bottom">
+            Built with intent
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee-shell mt-16" data-reveal>
+      <div class="marquee-track" aria-label="Technology and skills ticker">
+        <div class="marquee-group">
+          <span *ngFor="let item of marqueeItems" class="marquee-chip">{{ item }}</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span *ngFor="let item of marqueeItems" class="marquee-chip">{{ item }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about-section" class="section-wrap">
+  <div class="section-inner">
+    <div class="section-heading" data-reveal>
+      <p class="section-kicker">About me</p>
+      <h2 class="section-title font-heading">
+        A practical builder with a strong eye for the finishing details
+      </h2>
+      <p class="section-copy">
+        I work best where design awareness and engineering discipline meet: shaping interfaces, workflows, and
+        software details into something more useful, professional, and maintainable.
+      </p>
+    </div>
+
+    <div class="about-layout">
+      <div class="about-media" data-reveal>
         <img
-          src="assets/images/huvashenPortfolioPic.jpg"
-          alt="Huvashen Gramani Image"
-          class="h-full w-full object-cover"
+          src="assets/images/huviLinkedInBackground.jpg"
+          alt="Huvashen Gramani profile background"
+          class="about-media__image"
+          loading="lazy"
         />
+
+        <div class="about-media__overlay">
+          <h3 class="font-heading text-2xl text-white">
+            Software that feels calm, clear, and elevated
+          </h3>
+          <p class="text-sm leading-6 text-white/72">
+            I focus on structure, hierarchy, and interaction details that help software feel easier to trust.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-highlights" data-reveal>
+        <article *ngFor="let item of aboutHighlights" class="story-highlight">
+          <p class="card-eyebrow">Professional focus</p>
+          <h3 class="story-highlight__title">{{ item.title }}</h3>
+          <p class="story-highlight__body">{{ item.body }}</p>
+        </article>
       </div>
     </div>
 
-    <!-- Text + buttons -->
-    <div class="text-center md:text-left">
-      <p class="text-gray-500 text-sm md:text-base mb-2">
-        Hey there, I'm
-      </p>
-
-      <h1 class="text-3xl md:text-5xl font-semibold text-gray-900 mb-2">
-        Huvashen Gramani
-      </h1>
-
-      <h2 class="text-lg md:text-2xl font-medium text-gray-600 mb-6">
-        Junior Software Developer
-      </h2>
-
-      <!-- Buttons -->
-      <div
-        class="flex flex-col sm:flex-row items-center gap-4 mb-6 justify-center md:justify-start"
-      >
-        <button
-          (click)="downloadCv()"
-          class="rounded-full border border-gray-900 px-7 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200"
-        >
-          Download CV
-        </button>
-
-        <button
-          (click)="goToContact()"
-          class="rounded-full bg-gray-900 px-7 py-2.5 text-sm font-medium text-white hover:bg-gray-700 transition-colors duration-200"
-        >
-          Contact Info
-        </button>
-      </div>
-
-      <!-- Social icons -->
-      <div class="flex items-center justify-center md:justify-start gap-4">
-        <!-- LinkedIn -->
-        <a
-          href="https://www.linkedin.com/in/huvashen-gramani-64aa75236/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center justify-center h-10 w-10 rounded-full border border-gray-300 hover:border-gray-900 hover:bg-gray-900 hover:text-white text-gray-700 transition-colors duration-200"
-        >
-          <span class="font-bold text-lg">in</span>
-        </a>
-
-        <!-- GitHub -->
-        <!-- replace href value with your real GitHub profile URL -->
-        <a
-          href="https://github.com/Huvashen"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center justify-center h-10 w-10 rounded-full border border-gray-300 hover:border-gray-900 hover:bg-gray-900 hover:text-white text-gray-700 transition-colors duration-200"
-          aria-label="GitHub"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="h-5 w-5"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58
-                0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.74.08-.74
-                1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.62-2.66-.3-5.47-1.33-5.47-5.93
-                0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 0 1 3.01-.4
-                c1.02 0 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22
-                0 4.61-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.7.83.58A12.02 12.02 0 0 0 24 12
-                C24 5.37 18.63 0 12 0Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </a>
-      </div>
+    <div class="story-grid mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <article *ngFor="let story of storyCards" class="journey-card" data-reveal>
+        <p class="card-eyebrow">{{ story.label }}</p>
+        <h3 class="journey-card__title">{{ story.title }}</h3>
+        <p class="journey-card__body">{{ story.body }}</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ======================================== ABOUT SECTION ===================================== -->
-<section
-  id="about-section"
-  class="bg-white py-16 lg:py-24 px-4 flex justify-center"
->
-  <div class="max-w-5xl w-full">
-    <!-- Section heading -->
-    <div class="text-center mb-12">
-      <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-2">
-        Get To Know More
-      </p>
-      <h2 class="text-3xl md:text-4xl font-semibold text-gray-900">
-        About Me
+<section id="experience-section" class="section-wrap section-wrap--alternate">
+  <div class="section-inner">
+    <div class="section-heading" data-reveal>
+      <p class="section-kicker">Experience</p>
+      <h2 class="section-title font-heading">
+        My stack, tools, and day-to-day platforms
       </h2>
+      <p class="section-copy">
+        A scalable overview of the technologies, frameworks, platforms, and workflow tools I use across
+        interface development, back-end logic, integrations, delivery, and support.
+      </p>
     </div>
 
-    <!-- Content grid -->
-    <div
-      class="grid md:grid-cols-[260px,minmax(0,1fr)] gap-10 lg:gap-16 items-start"
-    >
-      <!-- Left: image -->
-      <div class="flex justify-center md:justify-start">
-        <div
-          class="h-auto w-full md:h-72 md:w-full rounded-[2rem] overflow-hidden shadow-lg bg-gray-100"
+    <div class="stack-shell" data-reveal>
+      <div class="stack-tabs" role="tablist" aria-label="Experience categories">
+        <button
+          *ngFor="let group of skillGroups"
+          type="button"
+          class="stack-tab"
+          [class.is-active]="group.id === activeSkillGroupId()"
+          [attr.aria-selected]="group.id === activeSkillGroupId()"
+          (click)="selectSkillGroup(group.id)"
         >
+          <span class="stack-tab__label">{{ group.tabLabel }}</span>
+          <span class="stack-tab__count">{{ group.skills.length }}</span>
+        </button>
+      </div>
+
+      <article *ngIf="activeSkillGroup() as group" class="stack-panel">
+        <div class="stack-panel__header">
+          <div class="stack-panel__intro">
+            <p class="card-eyebrow">Active stack</p>
+            <h3 class="stack-panel__title font-heading">{{ group.title }}</h3>
+            <p class="stack-panel__copy">{{ group.summary }}</p>
+          </div>
+        </div>
+
+        <div class="stack-rail">
+          <div
+            id="experience-strip"
+            class="stack-strip"
+            (mouseenter)="setExperienceAutoscrollPaused(true)"
+            (mouseleave)="setExperienceAutoscrollPaused(false)"
+            (focusin)="setExperienceAutoscrollPaused(true)"
+            (focusout)="setExperienceAutoscrollPaused(false)"
+          >
+            <div class="stack-strip__group">
+              <article *ngFor="let skill of group.skills" class="stack-skill">
+                <div [ngClass]="['stack-skill__badge', 'stack-skill__badge--' + skill.icon, skill.logoUrl ? 'stack-skill__badge--logo' : '']">
+                  <img
+                    *ngIf="skill.logoUrl; else fallbackSkillIcon"
+                    [src]="skill.logoUrl"
+                    [alt]="skill.name + ' logo'"
+                    class="stack-skill__logo"
+                    loading="lazy"
+                  />
+
+                  <ng-template #fallbackSkillIcon>
+                    <ng-container [ngSwitch]="skill.icon">
+                  <svg *ngSwitchCase="'html'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M4 3h16l-1.4 16.8L12 22l-6.6-2.2L4 3Z" />
+                    <path fill="#fff" d="M8 7h8.1l-.22 2.04H10.2l.13 1.52h5.31l-.41 4.67L12 16.16l-3.21-.93-.2-2.18h1.89l.09.95 1.43.39 1.44-.39.15-1.78H8.61L8 7Z" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'css'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M4 3h16l-1.4 16.8L12 22l-6.6-2.2L4 3Z" />
+                    <path fill="#fff" d="M8.08 7h8.02l-.2 2.03H10.2l.12 1.53h5.24l-.5 5.8L12 17.28l-3.06-.92-.21-2.18h1.87l.1.95 1.3.39 1.34-.39.19-2.24H8.61L8.08 7Z" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'tailwind'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M7.2 9.4c1-1.05 1.98-1.58 2.95-1.58 1.53 0 2.37.84 3.16 1.96.8 1.13 1.56 2.26 3.24 2.26 1 0 1.95-.5 2.9-1.52-.73 3-2.4 4.5-5.01 4.5-1.53 0-2.36-.84-3.16-1.97-.8-1.12-1.56-2.25-3.24-2.25-1 0-1.95.5-2.9 1.52.73-2.97 2.4-4.46 5.06-4.46Z" />
+                    <path fill="currentColor" d="M4.65 12.92c.73-2.98 2.4-4.47 5.06-4.47 1.53 0 2.37.84 3.16 1.97.8 1.12 1.56 2.25 3.24 2.25 1 0 1.95-.5 2.9-1.52-.73 2.98-2.4 4.47-5.06 4.47-1.53 0-2.37-.84-3.16-1.97-.8-1.12-1.56-2.25-3.24-2.25-1 0-1.95.5-2.9 1.52Z" opacity="0.78" />
+                  </svg>
+
+                  <span *ngSwitchCase="'javascript'" class="stack-skill__mono">JS</span>
+                  <span *ngSwitchCase="'typescript'" class="stack-skill__mono">TS</span>
+
+                  <svg *ngSwitchCase="'angular'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 2 4.7 4.7l1.1 10L12 22l6.2-7.3 1.1-10L12 2Z" />
+                    <path fill="#fff" d="m12 6.05-3.62 8.55H9.8l.72-1.82h2.98l.72 1.82h1.42L12 6.05Zm-.9 5.2L12 8.8l.9 2.45h-1.8Z" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'ng-zorro'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M12 3.2 20 11 12 20.8 4 11 12 3.2Z" />
+                    <path fill="#fff" d="M8 8.55h8.05L11.2 15.2h4.66V16H7.85l4.83-6.65H8v-.8Z" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'responsive-ui'" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3.5" y="5" width="12.5" height="8.6" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.7" />
+                    <path d="M9.25 16.1h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" />
+                    <rect x="17.25" y="8.2" width="3.4" height="8.1" rx="1.1" fill="none" stroke="currentColor" stroke-width="1.7" />
+                  </svg>
+
+                  <span *ngSwitchCase="'adobe-xd'" class="stack-skill__mono">Xd</span>
+                  <span *ngSwitchCase="'csharp-dotnet'" class="stack-skill__mono">C#</span>
+
+                  <svg *ngSwitchCase="'api'" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="6" cy="12" r="2.1" fill="currentColor" />
+                    <circle cx="18" cy="7" r="2.1" fill="currentColor" />
+                    <circle cx="18" cy="17" r="2.1" fill="currentColor" />
+                    <path d="M7.9 10.95 16.1 8.05M7.9 13.05l8.2 2.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'sql'" viewBox="0 0 24 24" aria-hidden="true">
+                    <ellipse cx="12" cy="7" rx="5.5" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M6.5 7v8c0 1.4 2.46 2.5 5.5 2.5s5.5-1.1 5.5-2.5V7" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M6.5 11.1c0 1.4 2.46 2.5 5.5 2.5s5.5-1.1 5.5-2.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'git-github'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 7.2 12 4l3 3.2-3 3.1L9 7.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.8" />
+                    <path d="M12 10.3v5.05" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                    <circle cx="12" cy="17.7" r="2.05" fill="currentColor" />
+                    <circle cx="8.15" cy="12.45" r="2.05" fill="currentColor" />
+                    <path d="M10.35 16.35 8.9 13.85M12 12.3 9.95 12.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'agile'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8.2 6.4A6.7 6.7 0 0 1 18 10.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                    <path d="m16.65 7.15 2.1 2.95-3.55.35" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                    <path d="M15.8 17.6A6.7 6.7 0 0 1 6 13.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                    <path d="m7.35 16.85-2.1-2.95 3.55-.35" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'java'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 15.6h6.5a2.1 2.1 0 0 0 0-4.2H15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                    <path d="M8.6 10.4h6.2v1.5a3.1 3.1 0 0 1-3.1 3.1h0a3.1 3.1 0 0 1-3.1-3.1v-1.5Z" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <path d="M11.1 6.2c1 .7-1.4 1.5 0 2.5M13.45 5c1 .7-1.4 1.5 0 2.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.6" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'postman'" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="7.5" fill="currentColor" />
+                    <path d="M9.1 14.35 15.4 10.1M15.4 10.1l-3.2-.05M15.4 10.1l-1 3.05" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'testing'" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="10.2" cy="10.2" r="4.35" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <path d="m13.65 13.65 3.65 3.65M8.6 9.3h3.2M10.2 7.7v3.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'jira'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="m11.9 4.1 3.45 3.45-5.3 5.3-3.45-3.45 5.3-5.3Zm5.55 5.55 2.35 2.35-5.3 5.3-2.35-2.35 5.3-5.3Zm-11.1 0 2.35 2.35-2.35 2.35L4 12l2.35-2.35Z" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'azure-devops'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="m5 7.2 4.7 1.6 5.8-3.2 3.5 1.4v9.7l-3.5 1.7-5.8-3.1L5 17V7.2Zm4.7 3.3v4l5.8 2.7V8l-5.8 2.5Z" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'infobip'" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="4.1" y="5.1" width="15.8" height="11.8" rx="3.3" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <circle cx="9" cy="11" r="1.25" fill="currentColor" />
+                    <circle cx="12" cy="11" r="1.25" fill="currentColor" />
+                    <circle cx="15" cy="11" r="1.25" fill="currentColor" />
+                    <path d="m10 16.9-2.35 2.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'visual-studio'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M17.4 4.9 11 8.4 7.4 5.8 4 7.95v8.1l3.4 2.15L11 15.6l6.4 3.5L20 17.6V6.4l-2.6-1.5ZM11 10.45l4.3-2.35v7.8L11 13.55l-2.7 1.95V8.5L11 10.45Z" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'manage-engine'" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="5" y="8.4" width="3.2" height="7.6" rx="1" fill="currentColor" />
+                    <rect x="10.4" y="5.8" width="3.2" height="10.2" rx="1" fill="currentColor" opacity="0.82" />
+                    <rect x="15.8" y="10.2" width="3.2" height="5.8" rx="1" fill="currentColor" opacity="0.62" />
+                    <circle cx="12" cy="4.2" r="1.1" fill="currentColor" />
+                  </svg>
+
+                  <svg *ngSwitchCase="'clickup'" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m7 8.5 5-4.2 5 4.2" fill="none" stroke="#8b5cf6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1" />
+                    <path d="M8.2 12.2 12 16l3.8-3.8" fill="none" stroke="#f43f5e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.1" />
+                    <path d="M7 18.3h10" fill="none" stroke="#f59e0b" stroke-linecap="round" stroke-width="2.1" />
+                  </svg>
+                    </ng-container>
+                  </ng-template>
+                </div>
+                <p class="stack-skill__name">{{ skill.name }}</p>
+              </article>
+            </div>
+
+            <div class="stack-strip__group" aria-hidden="true">
+              <article *ngFor="let skill of group.skills" class="stack-skill">
+                <div [ngClass]="['stack-skill__badge', 'stack-skill__badge--' + skill.icon, skill.logoUrl ? 'stack-skill__badge--logo' : '']">
+                  <img
+                    *ngIf="skill.logoUrl; else duplicateFallbackSkillIcon"
+                    [src]="skill.logoUrl"
+                    alt=""
+                    class="stack-skill__logo"
+                    loading="lazy"
+                  />
+
+                  <ng-template #duplicateFallbackSkillIcon>
+                    <ng-container [ngSwitch]="skill.icon">
+                      <svg *ngSwitchCase="'responsive-ui'" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3.5" y="5" width="12.5" height="8.6" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.7" />
+                        <path d="M9.25 16.1h5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7" />
+                        <rect x="17.25" y="8.2" width="3.4" height="8.1" rx="1.1" fill="none" stroke="currentColor" stroke-width="1.7" />
+                      </svg>
+                      <svg *ngSwitchCase="'api'" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="6" cy="12" r="2.1" fill="currentColor" />
+                        <circle cx="18" cy="7" r="2.1" fill="currentColor" />
+                        <circle cx="18" cy="17" r="2.1" fill="currentColor" />
+                        <path d="M7.9 10.95 16.1 8.05M7.9 13.05l8.2 2.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                      </svg>
+                      <svg *ngSwitchCase="'sql'" viewBox="0 0 24 24" aria-hidden="true">
+                        <ellipse cx="12" cy="7" rx="5.5" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M6.5 7v8c0 1.4 2.46 2.5 5.5 2.5s5.5-1.1 5.5-2.5V7" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <path d="M6.5 11.1c0 1.4 2.46 2.5 5.5 2.5s5.5-1.1 5.5-2.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+                      </svg>
+                      <svg *ngSwitchCase="'agile'" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.2 6.4A6.7 6.7 0 0 1 18 10.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                        <path d="m16.65 7.15 2.1 2.95-3.55.35" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                        <path d="M15.8 17.6A6.7 6.7 0 0 1 6 13.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                        <path d="m7.35 16.85-2.1-2.95 3.55-.35" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                      </svg>
+                      <svg *ngSwitchCase="'infobip'" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="4.1" y="5.1" width="15.8" height="11.8" rx="3.3" fill="none" stroke="currentColor" stroke-width="1.8" />
+                        <circle cx="9" cy="11" r="1.25" fill="currentColor" />
+                        <circle cx="12" cy="11" r="1.25" fill="currentColor" />
+                        <circle cx="15" cy="11" r="1.25" fill="currentColor" />
+                        <path d="m10 16.9-2.35 2.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" />
+                      </svg>
+                      <svg *ngSwitchCase="'manage-engine'" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="5" y="8.4" width="3.2" height="7.6" rx="1" fill="currentColor" />
+                        <rect x="10.4" y="5.8" width="3.2" height="10.2" rx="1" fill="currentColor" opacity="0.82" />
+                        <rect x="15.8" y="10.2" width="3.2" height="5.8" rx="1" fill="currentColor" opacity="0.62" />
+                        <circle cx="12" cy="4.2" r="1.1" fill="currentColor" />
+                      </svg>
+                      <svg *ngSwitchDefault viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="7" fill="currentColor" opacity="0.18" />
+                        <circle cx="12" cy="12" r="3.5" fill="currentColor" />
+                      </svg>
+                    </ng-container>
+                  </ng-template>
+                </div>
+                <p class="stack-skill__name">{{ skill.name }}</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects-section" class="section-wrap section-wrap--dark">
+  <div class="section-inner">
+    <div class="section-heading section-heading--light" data-reveal>
+      <p class="section-kicker">Featured work</p>
+      <h2 class="section-title font-heading">
+        Project work across interfaces, operations, and integrations
+      </h2>
+      <p class="section-copy">
+        A focused selection of builds that show responsive UI, business workflow thinking, API integration,
+        and practical full-stack problem solving.
+      </p>
+    </div>
+
+    <div class="project-layout grid gap-8 xl:grid-cols-[320px_minmax(0,1fr)]">
+      <div
+        class="project-selector-shell"
+        data-reveal
+      >
+        <div id="project-selector-viewport" class="project-selector-viewport">
+          <div id="project-selector-track" class="project-selector-track">
+            <div class="project-selector-list project-selector-group">
+              <button
+                *ngFor="let project of projects"
+                type="button"
+                class="project-selector"
+                [class.is-active]="project.id === activeProjectId()"
+                [class.has-hint]="descriptorHintProjectId() === project.id"
+                (click)="selectProject(project.id)"
+                (mouseenter)="onProjectHintEnter(project.id)"
+                (mousemove)="onProjectHintMove(project.id)"
+                (mouseleave)="onProjectHintLeave(project.id)"
+                (focus)="onProjectHintFocus(project.id)"
+                (blur)="onProjectHintLeave(project.id)"
+              >
+                <div class="project-selector__topline flex items-center justify-between gap-3">
+                  <p class="card-eyebrow">{{ project.category }}</p>
+                  <span class="project-selector__status">{{ project.visibility }}</span>
+                </div>
+
+                <h3 class="project-selector__title">{{ project.title }}</h3>
+                <p class="project-selector__summary">{{ project.summary }}</p>
+
+                <div class="project-selector__chips">
+                  <span *ngFor="let tag of project.tech | slice:0:2" class="project-selector__chip">
+                    {{ tag }}
+                  </span>
+                  <span *ngIf="project.tech.length > 2" class="project-selector__chip project-selector__chip--count">
+                    +{{ project.tech.length - 2 }}
+                  </span>
+                </div>
+
+                <div *ngIf="descriptorHintProjectId() === project.id" class="project-selector__hint">
+                  <p class="project-selector__hint-label">Project summary</p>
+                  <p class="project-selector__hint-copy">{{ project.summary }}</p>
+                </div>
+              </button>
+            </div>
+
+            <div class="project-selector-list project-selector-group project-selector-list--duplicate" aria-hidden="true">
+              <button
+                *ngFor="let project of projects"
+                type="button"
+                class="project-selector"
+                [class.is-active]="project.id === activeProjectId()"
+                [class.has-hint]="descriptorHintProjectId() === project.id"
+                (click)="selectProject(project.id)"
+                (mouseenter)="onProjectHintEnter(project.id)"
+                (mousemove)="onProjectHintMove(project.id)"
+                (mouseleave)="onProjectHintLeave(project.id)"
+                tabindex="-1"
+              >
+                <div class="project-selector__topline flex items-center justify-between gap-3">
+                  <p class="card-eyebrow">{{ project.category }}</p>
+                  <span class="project-selector__status">{{ project.visibility }}</span>
+                </div>
+
+                <h3 class="project-selector__title">{{ project.title }}</h3>
+                <p class="project-selector__summary">{{ project.summary }}</p>
+
+                <div class="project-selector__chips">
+                  <span *ngFor="let tag of project.tech | slice:0:2" class="project-selector__chip">
+                    {{ tag }}
+                  </span>
+                  <span *ngIf="project.tech.length > 2" class="project-selector__chip project-selector__chip--count">
+                    +{{ project.tech.length - 2 }}
+                  </span>
+                </div>
+
+                <div *ngIf="descriptorHintProjectId() === project.id" class="project-selector__hint">
+                  <p class="project-selector__hint-label">Project summary</p>
+                  <p class="project-selector__hint-copy">{{ project.summary }}</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article *ngIf="activeProject() as project" class="project-spotlight" data-reveal>
+        <div class="project-spotlight__media">
           <img
-            src="assets/images/huviLinkedInBackground.jpg"
-            alt="Huvashen Gramani"
-            class="h-full w-full object-cover"
+            [src]="project.imageUrl"
+            [alt]="project.imageAlt"
+            class="project-spotlight__image"
+            loading="lazy"
           />
-        </div>
-      </div>
-
-      <!-- Right: cards + text -->
-      <div>
-        <!-- Experience / Education cards -->
-        <div
-          class="flex flex-col sm:flex-row gap-5 mb-8"
-        >
-          <!-- Experience card -->
-          <div
-            class="flex-1 border border-gray-300 rounded-[2rem] px-6 py-6 text-center shadow-sm"
-          >
-            <div class="mb-2 text-2xl">
-              🧑‍💻
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-1">
-              Experience
-            </h3>
-            <p class="text-sm text-gray-500">
-              2+ years
-            </p>
-            <p class="text-sm text-gray-500">
-              Software Development
-            </p>
-          </div>
-
-          <!-- Education card -->
-          <div
-            class="flex-1 border border-gray-300 rounded-[2rem] px-6 py-6 text-center shadow-sm"
-          >
-            <div class="mb-2 text-2xl">
-              🎓
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-1">
-              Education
-            </h3>
-            <p class="text-sm text-gray-500">
-              BSC IT (Cum Laude)
-            </p>
-            <p class="text-sm text-gray-500">
-              Currently pursuing an Honors Degree in IT
-            </p>
+          <div class="project-spotlight__badge-row">
+            <span class="project-badge">{{ project.role }}</span>
+            <span class="project-badge project-badge--muted">{{ project.visibility }}</span>
           </div>
         </div>
 
-        <!-- About text -->
-        <p class="text-sm md:text-base leading-relaxed text-gray-600">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </p>
-      </div>
+        <div class="project-spotlight__body">
+          <div class="space-y-4">
+            <div>
+              <p class="card-eyebrow text-[var(--accent-secondary)]">{{ project.category }}</p>
+              <h3 class="project-spotlight__title font-heading">{{ project.title }}</h3>
+            </div>
+
+            <p class="project-spotlight__copy">{{ project.description }}</p>
+          </div>
+
+          <div class="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+            <div class="spotlight-panel">
+              <p class="spotlight-panel__label">Highlights</p>
+              <ul class="spotlight-list">
+                <li *ngFor="let point of project.highlights">{{ point }}</li>
+              </ul>
+            </div>
+
+            <div class="spotlight-panel">
+              <p class="spotlight-panel__label">Stack</p>
+              <div class="spotlight-tech">
+                <span *ngFor="let tag of project.tech" class="spotlight-tech__chip">{{ tag }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              *ngIf="project.liveUrl"
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noreferrer"
+              class="primary-button"
+            >
+              View live
+            </a>
+
+            <a
+              *ngIf="project.githubUrl"
+              [href]="project.githubUrl"
+              target="_blank"
+              rel="noreferrer"
+              class="secondary-button secondary-button--dark"
+            >
+              View source
+            </a>
+
+            <button
+              *ngIf="project.isConfidential"
+              type="button"
+              class="ghost-button ghost-button--dark"
+              (click)="openConfidentialModal(project.title)"
+            >
+              Why private?
+            </button>
+
+            <span
+              *ngIf="!project.liveUrl && !project.githubUrl && !project.isConfidential"
+              class="project-note"
+            >
+              Prototype case study available on request.
+            </span>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ======================================== EXPERIENCE SECTION ===================================== -->
-<section
-  id="experience-section"
-  class="scroll-mt-24 bg-white py-16 lg:py-24 px-4 flex justify-center"
->
-  <div class="max-w-5xl w-full">
-    <!-- Section heading -->
-    <div class="text-center mb-12">
-      <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-2">
-        Explore My
-      </p>
-      <h2 class="text-3xl md:text-4xl font-semibold text-gray-900">
-        Experience
+<section class="section-wrap">
+  <div class="section-inner">
+    <div class="section-heading" data-reveal>
+      <p class="section-kicker">How I work</p>
+      <h2 class="section-title font-heading">
+        A practical approach to building polished software
       </h2>
-    </div>
-
-    <!-- Cards wrapper -->
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Frontend card -->
-      <div
-        class="border border-gray-300 rounded-[2rem] px-8 py-8 shadow-sm bg-white"
-      >
-        <h3 class="text-xl font-semibold text-gray-900 text-center mb-6">
-          Frontend Development
-        </h3>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
-          <!-- Item -->
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">HTML</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">CSS / Tailwind</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">JavaScript</p>
-              <p class="text-xs text-gray-500">Intermediate</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">TypeScript</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Angular</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">NG - ZORRO</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Responsive UI</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Adobe XD</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Backend Tools-->
-      <div
-        class="border border-gray-300 rounded-[2rem] px-8 py-8 shadow-sm bg-white"
-      >
-        <h3 class="text-xl font-semibold text-gray-900 text-center mb-6">
-          Backend & Tools
-        </h3>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">C# / .NET</p>
-              <p class="text-xs text-gray-500">Intermediate</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">REST APIs</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">SQL / Databases</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Git / GitHub</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Agile / Scrum</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Java</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Postman</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Testing / Debugging</p>
-              <p class="text-xs text-gray-500">Intermediate</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project management Tools and Platforms -->
-      <div
-        class="border border-gray-300 rounded-[2rem] px-8 py-8 shadow-sm bg-white"
-      >
-        <h3 class="text-xl font-semibold text-gray-900 text-center mb-6">
-          Project Management Tools & Platforms
-        </h3>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
-          <!-- Item -->
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">JIRA</p>
-              <p class="text-xs text-gray-500">Intermediate</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Azure DevOps</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Infobip</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Visual Studio</p>
-              <p class="text-xs text-gray-500">Experienced</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">Manage Engine</p>
-              <p class="text-xs text-gray-500">Intermediate</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <span class="mt-1 text-lg">🧩</span>
-            <div>
-              <p class="font-semibold text-gray-900 text-sm">ClickUp</p>
-              <p class="text-xs text-gray-500">Basic</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================== PROJECTS SECTION ===================================== -->
-<section
-  id="projects-section"
-  class="scroll-mt-24 bg-white py-16 lg:py-24 px-4 flex justify-center"
->
-  <div class="max-w-5xl w-full">
-    <!-- Section heading -->
-    <div class="text-center mb-12">
-      <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-2">
-        Browse My Recent
+      <p class="section-copy">
+        I bring design awareness, structured implementation, and steady ownership to projects that need to
+        look professional, work reliably, and keep improving over time.
       </p>
-      <h2 class="text-3xl md:text-4xl font-semibold text-gray-900">
-        Projects
-      </h2>
     </div>
 
-    <!-- Projects grid -->
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Project 1 -->
-      <article
-        class="border border-gray-200 rounded-[2rem] bg-white shadow-sm flex flex-col overflow-hidden"
-      >
-        <div class="p-5 pb-0">
-          <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100">
-            <img
-              src="assets/images/SmartPackCV.png"
-              alt="Smartpack Preview"
-              class="h-auto w-auto object-cover"
-            />
-          </div>
-        </div>
-
-        <div class="px-6 pt-5 pb-6 flex flex-col items-center gap-4">
-          <h3 class="text-lg font-semibold text-gray-900 text-center">
-            SmartPack Website
-          </h3>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            Fully Responsive and interactive website with embedded links and subscription logins using Infobip.
-          </p>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            🛠️ Angular, Tailwind CSS, Infobip, Adobe XD
-          </p>
-
-          <!-- Upload onto Github and provide link -->
-          <div class="flex flex-wrap justify-center gap-3">
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-900 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://smartpack-qa.hc.co.za/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-100 transition-colors duration-200"
-            >
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article
-        class="border border-gray-200 rounded-[2rem] bg-white shadow-sm flex flex-col overflow-hidden"
-      >
-        <div class="p-5 pb-0">
-          <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100">
-            <img
-              src="assets/images/ScanITCV.png"
-              alt="ScanIT preview"
-              class="h-full w-auto object-cover"
-            />
-          </div>
-        </div>
-
-        <div class="px-6 pt-5 pb-6 flex flex-col items-center gap-4">
-          <h3 class="text-lg font-semibold text-gray-900 text-center">
-            ScanIT
-          </h3>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            A barcode tracking and distribution of all labeled products in the factory. Ensuring visibility from Label creation to shipping up until distribution
-          </p>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            🛠️ Angular, Ng-Zorro, TypeScript, C#, .NET, REST API's
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://github.com/your-github/project-two"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-900 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200"
-            >
-              GitHub
-            </a>
-            <a
-              href="#"
-              (click)="openConfidentialModal('ScanIT', $event)"
-              class="px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-100 transition-colors duration-200"
-            >
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article
-        class="border border-gray-200 rounded-[2rem] bg-white shadow-sm flex flex-col overflow-hidden"
-      >
-        <div class="p-5 pb-0">
-          <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100">
-            <img
-              src="assets/images/spaceShooterPreviewCV.png"
-              alt="Space Shooter preview"
-              class="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-
-        <div class="px-6 pt-5 pb-6 flex flex-col items-center gap-4">
-          <h3 class="text-lg font-semibold text-gray-900 text-center">
-            Space Shooter Game
-          </h3>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            A retro styled game with interactive features and scoreboards. Multiple levels with increasingly more difficult enemy ships.
-          </p>
-
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            🛠️ C#, .NET
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://github.com/your-github/project-three"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-900 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200"
-            >
-              GitHub
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-100 transition-colors duration-200"
-            >
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article
-        class="border border-gray-200 rounded-[2rem] bg-white shadow-sm flex flex-col overflow-hidden"
-      >
-        <div class="p-5 pb-0">
-          <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100">
-            <img
-              src="assets/images/pimPreviewCV.png"
-              alt="Pim Intergrate preview"
-              class="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-
-        <div class="px-6 pt-5 pb-6 flex flex-col items-center gap-4">
-          <h3 class="text-lg font-semibold text-gray-900 text-center">
-            PIM Integrator
-          </h3>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            PIM Integrator is a powerful integration solution that connects directly with client APIs to ingest and synchronise product data into the business's systems. It ensures that all incoming product information is accurate, up-to-date, and fully aligned with each client's specifications.
-          </p>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            🛠️ C#, REST API's, Postman, JSON, XML
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://github.com/your-github/project-two"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-900 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200"
-            >
-              GitHub
-            </a>
-            <a
-              href="#"
-              (click)="openConfidentialModal('PIM Integrator', $event)"
-              class="px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-100 transition-colors duration-200"
-            >
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-            <!-- Project 5 -->
-      <article
-        class="border border-gray-200 rounded-[2rem] bg-white shadow-sm flex flex-col overflow-hidden"
-      >
-        <div class="p-5 pb-0">
-          <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100">
-            <img
-              src="assets/images/VdayPreview.png"
-              alt="Valentine's Day preview"
-              class="h-full w-auto object-cover"
-            />
-          </div>
-        </div>
-
-        <div class="px-6 pt-5 pb-6 flex flex-col items-center gap-4">
-          <h3 class="text-lg font-semibold text-gray-900 text-center">
-            Valentine's Day Page
-          </h3>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-           My first ever project created as a beginner learning HTML and CSS. A simple, yet elegant Valentine's Day themed webpage.
-          </p>
-          <p class="text-xs text-gray-500 text-center max-w-xs">
-            🛠️ HTML, CSS, Javascript, TypeScript
-          </p>
-
-          <div class="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://github.com/Huvashen/YoshnaValentinesDay26/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-900 text-sm font-medium text-gray-900 hover:bg-gray-900 hover:text-white transition-colors duration-200"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://huvashen.github.io/YoshnaValentinesDay26/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="px-5 py-2 rounded-full border border-gray-300 text-sm font-medium text-gray-700 hover:border-gray-900 hover:bg-gray-100 transition-colors duration-200"
-            >
-              Live Demo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- More coming soon / arrow card -->
-      <article
-        class="border border-dashed border-gray-300 rounded-[2rem] bg-gray-50/80 shadow-sm flex flex-col items-center justify-center text-center p-6 group cursor-pointer hover:border-cyan-400 hover:bg-white transition-colors duration-200"
-        (click)="triggerConfetti()"
-      >
-        <div
-          class="mb-3 transform group-hover:translate-x-1 transition-transform duration-200"
+    <div class="grid gap-8 xl:grid-cols-[340px_minmax(0,1fr)]">
+      <div class="space-y-4" data-reveal>
+        <button
+          *ngFor="let pillar of workPillars"
+          type="button"
+          class="pillar-button"
+          [class.is-active]="pillar.id === activePillarId()"
+          (click)="selectPillar(pillar.id)"
         >
-          <span class="text-4xl">➜</span>
-        </div>
-
-        <p
-          class="text-sm font-semibold text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-        >
-          More coming soon!
-        </p>
-
-        <p
-          class="text-xs text-gray-400 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-        >
-          Click for a little surprise ✨
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================== CONTACT SECTION ===================================== -->
-<section
-  id="contact-section"
-  class="scroll-mt-24 bg-white py-16 lg:py-24 px-4 flex justify-center"
->
-  <div class="max-w-xl w-full text-center">
-    <!-- Heading -->
-    <p class="text-sm uppercase tracking-[0.25em] text-gray-400 mb-2">
-      Get In Touch
-    </p>
-    <h2 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-8">
-      Contact Me
-    </h2>
-
-    <!-- Contact pill -->
-    <div
-      class="inline-flex items-center gap-4 bg-white border border-gray-300 rounded-full px-4 py-3 shadow-sm"
-    >
-      <!-- Email icon circle -->
-      <div class="flex items-center justify-center h-8 w-8 rounded-full bg-gray-100">
-        <span class="text-lg">📧</span>
+          <p class="card-eyebrow">{{ pillar.kicker }}</p>
+          <h3 class="pillar-button__title">{{ pillar.title }}</h3>
+        </button>
       </div>
 
-      <!-- Email address -->
-      <a
-        href="mailto:gramanihuvashen@icloud.com"
-        class="text-sm md:text-base text-gray-700 hover:text-gray-900"
-      >
-        gramanihuvashen@icloud.com
-      </a>
+      <article *ngIf="activePillar() as pillar" class="pillar-detail" data-reveal>
+        <p class="card-eyebrow text-[var(--accent-secondary)]">{{ pillar.kicker }}</p>
+        <h3 class="pillar-detail__title font-heading">{{ pillar.title }}</h3>
+        <p class="pillar-detail__copy">{{ pillar.description }}</p>
 
-      <!-- Divider -->
-      <span class="w-px h-6 bg-gray-200 hidden sm:inline-block"></span>
-
-      <!-- LinkedIn link -->
-      <a
-        href="https://www.linkedin.com/in/huvashen-gramani-64aa75236/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 text-sm md:text-base text-gray-700 hover:text-gray-900"
-      >
-        <span
-          class="flex items-center justify-center h-8 w-8 rounded-full border border-gray-300"
-        >
-          <span class="font-bold text-xs">in</span>
-        </span>
-        <span class="hidden sm:inline">LinkedIn</span>
-      </a>
+        <div class="pillar-outcomes-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div *ngFor="let outcome of pillar.outcomes" class="pillar-outcome">
+            {{ outcome }}
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ======================================== FOOTER ===================================== -->
-<footer class="bg-black text-gray-300 py-10 px-4 mt-20">
-  <div class="max-w-5xl mx-auto flex flex-col items-center gap-6">
-    <!-- Navigation links -->
-    <div class="flex gap-6 text-sm">
-      <a href="#home-section" class="hover:text-[#6e6af7] transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-[#6e6af7]">Home</a>
-      <a href="#about-section" class="hover:text-[#6e6af7] transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-[#6e6af7]">About</a>
-      <a href="#experience-section" class="hover:text-[#6e6af7] transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-[#6e6af7]">Experience</a>
-      <a href="#projects-section" class="hover:text-[#6e6af7] transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-[#6e6af7]">Projects</a>
-      <a href="#contact-section" class="hover:text-[#6e6af7] transition-colors duration-200 pb-1 border-b-2 border-transparent hover:border-[#6e6af7]">Contact</a>
-    </div>
+<section id="contact-section" class="section-wrap section-wrap--contact">
+  <div class="section-inner">
+    <article class="contact-panel" data-reveal>
+      <div class="grid gap-8 xl:grid-cols-[1fr_0.95fr] xl:items-end">
+        <div class="space-y-4">
+          <p class="section-kicker contact-panel__kicker">Get in touch</p>
+          <h2 class="section-title contact-panel__title font-heading">
+            Let's build something polished, practical, and easy to use.
+          </h2>
+          <p class="contact-panel__copy text-base leading-8 sm:text-lg">
+            I am open to junior full-stack opportunities, portfolio work, and practical web projects across
+            front-end, back-end, and integrations.
+          </p>
+        </div>
 
-    <!-- Socials -->
-    <div class="flex items-center gap-4">
-      <!-- GitHub -->
-      <!-- replace href value with your real GitHub profile URL -->
-      <a
-        href="https://github.com/your-github"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="h-10 w-10 flex items-center justify-center rounded-full border border-gray-500 hover:border-white hover:text-white transition"
-        aria-label="GitHub"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="h-5 w-5"
-          fill="currentColor"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58
-              0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.75.08-.74.08-.74
-              1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.78.42-1.32.76-1.62-2.66-.3-5.47-1.33-5.47-5.93
-              0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.46 11.46 0 0 1 3.01-.4
-              c1.02 0 2.05.14 3.01.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22
-              0 4.61-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22 0 1.6-.01 2.88-.01 3.27 0 .32.22.7.83.58A12.02 12.02 0 0 0 24 12
-              C24 5.37 18.63 0 12 0Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </a>
+        <div class="contact-links-grid grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1">
+          <a [href]="'mailto:' + emailAddress" class="contact-link-card">
+            <span class="contact-link-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4.75 6.75h14.5v10.5H4.75V6.75Z" fill="none" stroke="currentColor" stroke-width="1.7" />
+                <path d="m5.25 7.25 6.75 5.6 6.75-5.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" />
+              </svg>
+            </span>
+            <span class="contact-link-card__content">
+              <span class="contact-link-card__label">Email</span>
+              <span class="contact-link-card__value">{{ emailAddress }}</span>
+            </span>
+          </a>
 
-      <a
-        href="https://www.linkedin.com/in/huvashen-gramani-64aa75236/"
-        target="_blank"
-        class="h-10 w-10 flex items-center justify-center rounded-full border border-gray-500 hover:border-white hover:text-white transition"
-      >
-        <span class="font-bold text-lg">in</span>
-      </a>
-    </div>
+          <a [href]="linkedinUrl" target="_blank" rel="noreferrer" class="contact-link-card">
+            <span class="contact-link-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6.15 9.7h3.25v8.15H6.15V9.7Zm1.62-4.05a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76Zm3.65 4.05h3.1v1.1c.48-.72 1.26-1.32 2.6-1.32 2.1 0 3.28 1.38 3.28 3.88v4.49h-3.25v-4.08c0-.98-.36-1.62-1.23-1.62-.84 0-1.25.59-1.25 1.62v4.08h-3.25V9.7Z" fill="currentColor" />
+              </svg>
+            </span>
+            <span class="contact-link-card__content">
+              <span class="contact-link-card__label">LinkedIn</span>
+              <span class="contact-link-card__value">View profile</span>
+            </span>
+          </a>
 
-    <!-- Copyright -->
-    <p class="text-xs text-gray-500">
-      © 2025 Huvashen Gramani
-    </p>
+          <a [href]="githubUrl" target="_blank" rel="noreferrer" class="contact-link-card">
+            <span class="contact-link-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12 3.75a8.45 8.45 0 0 0-2.67 16.46c.42.08.57-.18.57-.4v-1.42c-2.32.5-2.8-.98-2.8-.98-.38-.96-.93-1.22-.93-1.22-.76-.52.06-.51.06-.51.84.06 1.28.86 1.28.86.75 1.28 1.96.91 2.43.7.08-.54.29-.91.53-1.12-1.85-.21-3.8-.93-3.8-4.12 0-.91.33-1.66.86-2.24-.09-.21-.37-1.06.08-2.2 0 0 .7-.23 2.3.85A7.9 7.9 0 0 1 12 8.13c.71 0 1.42.1 2.09.28 1.59-1.08 2.29-.85 2.29-.85.45 1.14.17 1.99.08 2.2.54.58.86 1.33.86 2.24 0 3.2-1.95 3.9-3.81 4.11.3.26.57.77.57 1.55v2.15c0 .22.15.49.58.4A8.45 8.45 0 0 0 12 3.75Z" />
+              </svg>
+            </span>
+            <span class="contact-link-card__content">
+              <span class="contact-link-card__label">GitHub</span>
+              <span class="contact-link-card__value">See repositories</span>
+            </span>
+          </a>
+        </div>
+      </div>
 
-    <!-- Back to top -->
-    <button
-      (click)="scrollToTop()"
-      class="mt-2 text-gray-400 hover:text-white text-xl transition"
-    >
-      ↑
-    </button>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a [href]="'mailto:' + emailAddress" class="primary-button">Send an email</a>
+        <button type="button" class="secondary-button secondary-button--light" (click)="copyEmail()">
+          Copy email
+        </button>
+      </div>
+    </article>
+
+    <footer class="site-footer" data-reveal>
+      <p class="site-footer__name font-heading">Huvashen Gramani</p>
+    </footer>
   </div>
-</footer>
+</section>
 
-<!-- Floating Back-to-Top Button -->
 <button
-  id="backToTopBtn"
+  *ngIf="showBackToTop()"
+  type="button"
+  class="floating-top-button"
   (click)="scrollToTop()"
-  class="hidden fixed bottom-6 right-6 z-[2000] bg-gray-900 text-white h-12 w-12 rounded-full shadow-lg 
-         flex items-center justify-center text-2xl cursor-pointer transition-opacity duration-300 
-         hover:bg-gray-600"
+  aria-label="Back to top"
 >
-  ↑
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 5.5v13M6.5 11 12 5.5 17.5 11" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" />
+  </svg>
 </button>
 
-<!-- Confidential work modal -->
-<div
-  *ngIf="confidentialModalVisible"
-  class="fixed inset-0 z-[3000] flex items-center justify-center bg-black/40 px-4"
->
-  <div
-    class="bg-white max-w-sm w-full rounded-2xl shadow-2xl p-6 text-center border border-gray-200"
-  >
-    <!-- Icon -->
-    <div
-      class="mx-auto mb-4 h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center text-2xl"
-    >
-      🔒
-    </div>
-
-    <!-- Title -->
-    <h3 class="text-lg font-semibold text-gray-900 mb-2">
-      Live demo not available
-    </h3>
-
-    <!-- Message -->
-    <p class="text-sm text-gray-600 mb-6">
-      Sorry, the live demo for
-      <span class="font-medium text-gray-900">{{ confidentialProjectName }}</span>
-      can’t be shared because it’s client-related work and is subject to
-      confidentiality.
+<div *ngIf="confidentialModalVisible()" class="modal-backdrop" (click)="closeConfidentialModal()">
+  <div class="modal-panel" (click)="$event.stopPropagation()">
+    <p class="card-eyebrow">Confidential work</p>
+    <h3 class="modal-panel__title font-heading">Client-sensitive project</h3>
+    <p class="modal-panel__copy">
+      {{ confidentialProjectName() }} includes client-related work, so internal implementation details are not
+      displayed publicly. I can still discuss the project scope, responsibilities, and technical approach at a
+      high level.
     </p>
-
-    <!-- Button -->
-    <button
-      type="button"
-      (click)="closeConfidentialModal()"
-      class="inline-flex items-center justify-center rounded-full bg-gray-900 text-white px-5 py-2 text-sm font-medium hover:bg-gray-700 transition-colors duration-200"
-    >
-      Got it
+    <button type="button" class="primary-button" (click)="closeConfidentialModal()">
+      Close
     </button>
   </div>
 </div>
 
-<!-- Simple confetti overlay -->
-<div
-  *ngIf="showConfetti"
-  class="fixed inset-0 pointer-events-none overflow-hidden z-[999]"
->
-  <div
-    *ngFor="let piece of confettiPieces"
-    class="confetti-piece"
-    [ngStyle]="{
-      left: piece.left + '%',
-      width: piece.size + 'px',
-      height: piece.size * 2 + 'px',
-      backgroundColor: piece.color,
-      animationDuration: piece.duration + 's',
-      animationDelay: piece.delay + 's'
-    }"
-  ></div>
-</div>
-
-<!-- Toast notification -->
-<div
-  *ngIf="showToast"
-  class="fixed inset-x-0 bottom-6 flex justify-center z-[1000] pointer-events-none"
->
-  <div
-    class="pointer-events-auto bg-gray-900 text-white text-sm px-4 py-2 rounded-full shadow-lg flex items-center gap-2 animate-toast"
-  >
-    <span>New projects are on the way 👀</span>
-  </div>
+<div *ngIf="showToast()" class="toast-wrap">
+  <div class="toast-pill">{{ toastMessage() }}</div>
 </div>

@@ -1,0 +1,381 @@
+.react-island-section {
+  padding: 0 1rem 5rem;
+}
+
+.react-island-section .section-inner {
+  margin: 0 auto;
+  max-width: 76rem;
+}
+
+.react-island-mount {
+  min-height: 38rem;
+}
+
+.react-island {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(16, 33, 58, 0.08);
+  border-radius: 2rem;
+  background:
+    radial-gradient(circle at top right, var(--react-accent-soft), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 249, 252, 0.96));
+  padding: 1.5rem;
+  box-shadow: 0 28px 60px rgba(12, 19, 30, 0.1);
+}
+
+.react-island__intro {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 32rem;
+}
+
+.react-island__eyebrow {
+  color: var(--react-accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.react-island__title {
+  color: var(--ink-deep);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.react-island__copy {
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.react-island__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.react-island__control {
+  border: 1px solid rgba(16, 33, 58, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--muted-strong);
+  min-height: 2.8rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.react-island__control:hover,
+.react-island__control.is-active {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--react-accent) 42%, white);
+  color: var(--ink-deep);
+  box-shadow: 0 14px 26px rgba(16, 23, 36, 0.08);
+}
+
+.react-island__stage {
+  position: relative;
+  margin-top: 1.5rem;
+  padding: 2.2rem 0 1rem;
+}
+
+.react-island__screen {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border: 1px solid rgba(16, 33, 58, 0.08);
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(9, 18, 31, 0.98), rgba(14, 26, 43, 0.96));
+  box-shadow: 0 26px 52px rgba(5, 10, 18, 0.24);
+}
+
+.react-island__screen-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.react-island__dots {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.react-island__dots span {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.36);
+}
+
+.react-island__screen-label,
+.react-island__screen-stat,
+.react-island__mini-label,
+.react-island__mini-stat,
+.react-island__stack-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.react-island__screen-label {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.react-island__screen-stat,
+.react-island__mini-stat {
+  color: var(--react-accent);
+}
+
+.react-island__screen-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.react-island__main-card,
+.react-island__stack-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.react-island__main-card {
+  padding: 1.2rem;
+  min-height: 16rem;
+}
+
+.react-island__glint {
+  position: absolute;
+  inset: -40% auto auto -10%;
+  width: 60%;
+  height: 180%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transform: rotate(20deg);
+  animation: react-island-scan 5s ease-in-out infinite;
+}
+
+.react-island__headline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.react-island__mini-label {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.react-island__headline {
+  margin-top: 1rem;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  max-width: 12ch;
+}
+
+.react-island__chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.react-island__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.react-island__bars {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.react-island__bar {
+  display: block;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--react-accent), rgba(255, 255, 255, 0.7));
+  box-shadow: 0 0 20px color-mix(in srgb, var(--react-accent) 40%, transparent);
+  animation: react-island-bar-breathe 2.4s ease-in-out infinite;
+}
+
+.react-island__stack {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.react-island__stack-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.2rem;
+  padding: 1rem 1.1rem;
+  animation: react-island-float 5s ease-in-out infinite;
+}
+
+.react-island__stack-label {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.react-island__stack-value {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.react-island__float {
+  position: absolute;
+  z-index: 1;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 33, 58, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.7rem 0.9rem;
+  color: var(--ink-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 14px 26px rgba(16, 23, 36, 0.12);
+  animation: react-island-float 6s ease-in-out infinite;
+}
+
+.react-island__float--one {
+  right: 1.25rem;
+  top: 0;
+}
+
+.react-island__float--two {
+  left: 1.25rem;
+  bottom: 0;
+  animation-delay: -2s;
+}
+
+.react-island__orbit {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in srgb, var(--react-accent) 40%, white);
+  opacity: 0.42;
+}
+
+.react-island__orbit--one {
+  right: 2.2rem;
+  top: 0.25rem;
+  width: 8rem;
+  height: 8rem;
+  animation: react-island-orbit 14s linear infinite;
+}
+
+.react-island__orbit--two {
+  left: 2.4rem;
+  bottom: 1rem;
+  width: 5rem;
+  height: 5rem;
+  animation: react-island-orbit 11s linear infinite reverse;
+}
+
+@keyframes react-island-scan {
+  0%,
+  100% {
+    transform: translateX(-120%) rotate(20deg);
+  }
+  50% {
+    transform: translateX(220%) rotate(20deg);
+  }
+}
+
+@keyframes react-island-bar-breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes react-island-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes react-island-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 900px) {
+  .react-island__screen-grid {
+    grid-template-columns: minmax(0, 1.1fr) 18rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .react-island-section {
+    padding-bottom: 4rem;
+  }
+
+  .react-island {
+    padding: 1.15rem;
+  }
+
+  .react-island-mount {
+    min-height: 34rem;
+  }
+
+  .react-island__float {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .react-island *,
+  .react-island *::before,
+  .react-island *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

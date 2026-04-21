@@ -15,6 +15,11 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
+            "allowedCommonJsDependencies": [
+              "react",
+              "react-dom/client",
+              "react/jsx-runtime"
+            ],
             "assets": [
               {
                 "glob": "**/*",
@@ -32,6 +37,11 @@
           },
           "configurations": {
             "production": {
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": false
+              },
               "budgets": [
                 {
                   "type": "initial",

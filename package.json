@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng build --configuration production --base-href /HuvashenCV/ && npx angular-cli-ghpages --dir=dist/HuvashenCV/browser",  
+    "deploy": "ng build --configuration production --base-href /HuvashenCV/ && npx angular-cli-ghpages --dir=dist/HuvashenCV/browser",
     "test": "ng test",
     "serve:ssr:HuvashenCV": "node dist/HuvashenCV/server/server.mjs"
   },
@@ -46,6 +46,8 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "angular-cli-ghpages": "^3.0.2",
     "baseline-browser-mapping": "^2.9.18",
     "jasmine-core": "~5.9.0",
@@ -54,6 +56,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "typescript": "~5.9.2"
   }
 }

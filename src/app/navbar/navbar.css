@@ -1,0 +1,220 @@
+:host {
+  display: block;
+}
+
+.nav-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(135deg, rgba(14, 24, 39, 0.8), rgba(10, 18, 31, 0.64));
+  box-shadow: 0 22px 45px rgba(6, 10, 18, 0.18);
+  backdrop-filter: blur(18px);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-shell--scrolled {
+  border-color: rgba(255, 255, 255, 0.12);
+  background:
+    linear-gradient(135deg, rgba(11, 20, 34, 0.92), rgba(8, 15, 28, 0.9));
+  box-shadow: 0 26px 56px rgba(6, 10, 18, 0.24);
+}
+
+.brand-mark {
+  display: inline-flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.14), rgba(50, 212, 190, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.nav-link,
+.nav-cta,
+.mobile-link {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.nav-link {
+  position: relative;
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  color: rgba(240, 244, 248, 0.72);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0.45rem;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3ad2c7, #f0b35f);
+  transition: transform 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: #ffffff;
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(58, 210, 199, 0.34);
+  background: rgba(58, 210, 199, 0.12);
+  color: #f7fafc;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  border-color: rgba(58, 210, 199, 0.6);
+  background: rgba(58, 210, 199, 0.18);
+}
+
+.nav-toggle {
+  position: relative;
+  display: inline-flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-toggle__line {
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 1.15rem;
+  border-radius: 999px;
+  background: #ffffff;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.nav-toggle__line:nth-child(1) {
+  transform: translateY(-0.35rem);
+}
+
+.nav-toggle__line:nth-child(2) {
+  transform: translateY(0);
+}
+
+.nav-toggle__line:nth-child(3) {
+  transform: translateY(0.35rem);
+}
+
+.nav-toggle__line--top {
+  transform: rotate(45deg) !important;
+}
+
+.nav-toggle__line--middle {
+  opacity: 0;
+}
+
+.nav-toggle__line--bottom {
+  transform: rotate(-45deg) !important;
+}
+
+.mobile-panel {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(145deg, rgba(12, 21, 35, 0.94), rgba(9, 17, 29, 0.94));
+  box-shadow: 0 20px 40px rgba(6, 10, 18, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  color: rgba(240, 244, 248, 0.72);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.mobile-link::after {
+  content: '+';
+  color: rgba(58, 210, 199, 0.9);
+}
+
+.mobile-link:hover,
+.mobile-link.is-active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 640px) {
+  .nav-shell {
+    padding-inline: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-shell {
+    gap: 0.75rem;
+    padding: 0.75rem 0.85rem;
+    border-radius: 1.25rem;
+  }
+
+  .brand-mark {
+    height: 2.6rem;
+    width: 2.6rem;
+  }
+
+  .mobile-panel {
+    padding: 0.8rem;
+  }
+
+  .mobile-link {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.92rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-toggle,
+  .mobile-panel {
+    display: none;
+  }
+}
