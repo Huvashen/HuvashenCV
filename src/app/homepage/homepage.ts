@@ -101,7 +101,7 @@ export class Homepage implements AfterViewInit, OnDestroy {
   readonly emailAddress = 'gramanihuvashen@icloud.com';
   readonly linkedinUrl = 'https://www.linkedin.com/in/huvashen-gramani-64aa75236/';
   readonly githubUrl = 'https://github.com/Huvashen';
-  readonly cvUrl = 'assets/cv/CV Huvashen Gramani 25.pdf';
+  readonly cvUrl = 'assets/cv/Huvashen Gramani 2026 CV.pdf';
 
   readonly heroMetrics: HeroMetric[] = [
     {
