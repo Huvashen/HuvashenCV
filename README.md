@@ -1,66 +1,12 @@
-# HuvashenCV
+# Huvashen Gramani Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+The redesign uses the React, Vite, Three.js, and GSAP implementation from [Redoyanul Haque’s portfolio](https://github.com/red1-for-hek/portfolio-website). The upstream MIT notice is in LICENSE. Portfolio data lives in src/config.ts.
 
-## Development server
+Run from the redesign worktree:
 
-To start a local development server, run:
+    npm ci
+    npm run dev -- --host 127.0.0.1
 
-```bash
-ng serve
-```
+Open the URL Vite prints. Run npm run build for the production bundle.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## to redeploy changes to gh-pages branch
-
-ng build --configuration production --base-href "/HuvashenCV/"
-npx angular-cli-ghpages --dir=dist/HuvashenCV/browser
-
-make changes onto maste and run thuis command for updates
+The chess game runs in the browser using the bundled Redox chess engine.
